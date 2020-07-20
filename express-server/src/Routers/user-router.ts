@@ -3,7 +3,7 @@ import { getAllUsers, getUserById } from '../daos/user-dao'
 import { updateUserInfo } from '../daos/update-user-dao'
 import { User } from '../Models/User'
 import { authorizationMiddleware } from '../middleware/authorization-middleware'
-
+import { createNewUser } from '../daos/create-user-dao'
 export const findUsers = express.Router()
 
 findUsers.get("/:userId", async (req: Request, res: Response) => {
@@ -38,6 +38,18 @@ findUsers.get("/", authorizationMiddleware(['admin', 'finance-manager']), async 
     }
     
     
+})
+findUsers.post("/newUser", async (req: Request, res: Response) => {
+    let{ userId, username,
+        password, firstName, lastName, email, role} = req.body
+        let newUserInfo:User = {userId:userId, username:username, password:password, firstName:firstName, lastName:lastName, email:email, role:role}
+
+        try{
+            let newUser = await createNewUser(newUserInfo)
+            res.json(newUser)
+        }catch(e){
+            console.log(e)
+        }
 })
 
 findUsers.patch("/", authorizationMiddleware(['admin']), async (req: Request, res: Response) => {

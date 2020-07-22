@@ -52,7 +52,7 @@ findUsers.post("/newUser", async (req: Request, res: Response) => {
         }
 })
 
-findUsers.patch("/", authorizationMiddleware(['admin']), async (req: Request, res: Response) => {
+findUsers.patch("/", async (req: Request, res: Response) => {
     let{ userId, username,
         password, firstName, lastName, email, role} = req.body
         let infoToUpdate:User = {userId:userId, username:username, password:password, firstName:firstName, lastName:lastName, email:email, role:role}

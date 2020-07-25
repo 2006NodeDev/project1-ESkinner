@@ -1,4 +1,3 @@
-import { Role } from "./Role"
 export class User {
     //copy-pasted from README
     userId: number // primary key
@@ -7,5 +6,5 @@ export class User {
     firstName: string // not null
     lastName: string // not null
     email: string // not null
-    role: Role // not null
+    picturePath: string // not null
   }

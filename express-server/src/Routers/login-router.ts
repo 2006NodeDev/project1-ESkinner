@@ -6,7 +6,6 @@ export const loginRouter  = express.Router()
 
 
 loginRouter.post('/', async (req: Request, res: Response) => {
-
     let {username,
     password} = req.body
     if(!password || !username){

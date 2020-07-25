@@ -11,9 +11,9 @@ export async function createNewUser(newUserInfo:User){
     try{
         client = await connectionPool.connect()
         
-        let result:QueryResult = await client.query( `insert into project0.users("user_id","username", "password", "first_name", "last_name","email", "role_id") 
-        values ( 4, '${infoToUpdateDTO.username}', '${infoToUpdateDTO.password}', '${infoToUpdateDTO.first_name}', '${infoToUpdateDTO.last_name}', '${infoToUpdateDTO.email}', 1);`)
-        result = await client.query(`select * from project0.users u where u."user_id"=4;`)
+        let result:QueryResult = await client.query( `insert into project1.users("username", "password", "first_name", "last_name","email", "picture_path") 
+        values ( '${infoToUpdateDTO.username}', '${infoToUpdateDTO.password}', '${infoToUpdateDTO.first_name}', '${infoToUpdateDTO.last_name}', '${infoToUpdateDTO.email}', null);`)
+        result = await client.query(`select * from project1.users u order by u."user_id" desc limit(1);`)
         return result.rows
     }catch(e){
         console.log(e)

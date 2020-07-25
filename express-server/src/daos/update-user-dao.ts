@@ -11,7 +11,7 @@ export async function updateUserInfo(infoToUpdate:User){
     try{
         client = await connectionPool.connect()
         let result:QueryResult = await client.query(buildUpdateQuery(infoToUpdateDTO))
-        result = await client.query( `select * from project0.users u left join  project0.roles r on u."role_id"=r."role_id" where u."user_id"=${infoToUpdateDTO.user_id}`)
+        result = await client.query( `select * from project1.users u where u."user_id"=${infoToUpdateDTO.user_id}`)
         return result.rows
     }catch(e){
         console.log(e)

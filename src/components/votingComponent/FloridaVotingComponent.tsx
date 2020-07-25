@@ -35,8 +35,6 @@ export const FloridaVotingComponent: FunctionComponent<any> = (props) => {
             Florida
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-          Florida delivered razor thin election margins for the past two decades. 
-          Winning Florida would mean Democrats would only need to flip one more battleground state.
           Florida currently has {clicks} votes
           </Typography>
         </CardContent>

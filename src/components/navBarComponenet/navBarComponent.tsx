@@ -40,8 +40,8 @@ export const NavBarComponent: FunctionComponent<any> = (props) => {
     return (
         <nav>
             <AppBar position="static">
-                <Toolbar>
-                    <IconButton onClick={handleClick} edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                <Toolbar >
+                    <IconButton onClick={handleClick} edge="start" className={classes.menuButton} color="default" aria-label="menu">
                         <MenuIcon />
                     </IconButton>
                     <Menu
@@ -51,12 +51,12 @@ export const NavBarComponent: FunctionComponent<any> = (props) => {
                         open={Boolean(anchorEl)}
                         onClose={handleClose}
                     >
-                        <MenuItem onClick={handleClose}><Link to='/profile'>Profile</Link></MenuItem>
-                        <MenuItem onClick={handleClose}><Link to='/login'>Login</Link></MenuItem>
-                        <MenuItem onClick={handleClose}><Link to='/vote'>State List</Link> </MenuItem>
-                        <MenuItem onClick={handleClose}><Link to='/newUser'>Create A New User</Link> </MenuItem>
-                        <MenuItem onClick={handleClose}><Link to='/updateUser'>Update Profile</Link> </MenuItem>
-                        <MenuItem onClick={handleClose}><Link to='/userInfo'>Check User Info</Link> </MenuItem>
+                        <MenuItem onClick={handleClose}><Link to='/profile' style={{ textDecoration: 'none', color: 'black' }}>Profile</Link></MenuItem>
+                        <MenuItem onClick={handleClose}><Link to='/login' style={{ textDecoration: 'none', color: 'black' }}>Login</Link></MenuItem>
+                        <MenuItem onClick={handleClose}><Link to='/vote' style={{ textDecoration: 'none', color: 'black' }}>State List</Link> </MenuItem>
+                        <MenuItem onClick={handleClose}><Link to='/newUser' style={{ textDecoration: 'none', color: 'black' }}>Create A New User</Link> </MenuItem>
+                        <MenuItem onClick={handleClose}><Link to='/updateUser' style={{ textDecoration: 'none', color: 'black' }}>Update Profile</Link> </MenuItem>
+                        <MenuItem onClick={handleClose}><Link to='/userInfo' style={{ textDecoration: 'none', color: 'black' }}>Check User Info</Link> </MenuItem>
                     </Menu>
                     <Typography variant="h6" className={classes.title}>
                         Info

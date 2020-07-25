@@ -2,6 +2,7 @@ import React, { FunctionComponent, useState, SyntheticEvent } from 'react'
 import TextField from '@material-ui/core/TextField';
 import { loginUser } from '../remote api/loginUser';
 import Button from '@material-ui/core/Button'
+import { User } from '../../models/User'
 
 interface LoginProps{
     changeCurrentUser:(newUser:any)=>void
@@ -21,8 +22,9 @@ export const LoginComponent:FunctionComponent<any> = (props) => {
     }
     const loginSubmit = async (e:SyntheticEvent) => {//sythentic events are react interface for converting between the many different types of browser events
         e.preventDefault()
-        let res = await loginUser(username, password)
-        props.changeCurrentUser(res)
+        let response:User = await loginUser(username, password)
+        console.log(response, response.username)
+        props.changeCurrentUser(response)
         changePassword('')
     }
 

@@ -36,7 +36,6 @@ export const MichiganVotingComponent: FunctionComponent<any> = (props) => {
             Michigan
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-          Michigan is where Trump won by the smallest margin in 2016. Democrats flipped eight statewide seats in 2018 and it’s one of our best chances to flip a state in 2020.
           Michigan currently has {clicks} votes
           </Typography>
         </CardContent>

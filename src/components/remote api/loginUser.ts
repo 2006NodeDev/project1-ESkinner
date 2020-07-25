@@ -2,12 +2,11 @@ import { project1Client } from '.'
 
 export const loginUser= async (username:string, password:string) => {
     let credentials = {
-        username,
-        password
+        "username":username,
+        "password":password
     }
     try{
         let response = await project1Client.post('/login', credentials)
-        console.log(response)
         return(response.data)
     }catch(e){
 

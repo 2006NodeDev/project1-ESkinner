@@ -35,9 +35,8 @@ export const NorthCarolinaVotingComponent: FunctionComponent<any> = (props) => {
             North Carolina
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-          North Carolina was unique in 2016, electing Trump along with a Democratic Governor and Attorney General—a sign that we can win swing voters.
           North Carolina currently has {clicks} votes
-          </Typography>
+          </Typography>        
         </CardContent>
       </CardActionArea>
       <CardActions>

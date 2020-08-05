@@ -23,7 +23,6 @@ export const LoginComponent:FunctionComponent<any> = (props) => {
     const loginSubmit = async (e:SyntheticEvent) => {//sythentic events are react interface for converting between the many different types of browser events
         e.preventDefault()
         let response:User = await loginUser(username, password)
-        console.log(response, response.username)
         props.changeCurrentUser(response)
         changePassword('')
     }
